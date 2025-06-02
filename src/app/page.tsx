@@ -1,43 +1,28 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Check, FileText, Zap, Shield, Star } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { FileText, Zap, Shield, Star } from "lucide-react";
+//componet
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import DescriptionCard from "@/components/discriptionCard";
+import AccordionComponent from "@/components/accordion";
+import PlanCard from "@/components/planCard";
 
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-8">
-            <div className="font-bold text-xl">ScanMate</div>
-            <nav className="hidden md:flex space-x-6">
-              <Link href="#" className="text-sm hover:text-gray-600">
-                機能
-              </Link>
-              <Link href="#" className="text-sm hover:text-gray-600">
-                料金
-              </Link>
-              <Link href="#" className="text-sm hover:text-gray-600">
-                事例
-              </Link>
-              <Link href="#" className="text-sm hover:text-gray-600">
-                サポート
-              </Link>
-              <Link href="#" className="text-sm hover:text-gray-600">
-                チュートリアル
-              </Link>
-              <Link href="#" className="text-sm hover:text-gray-600">
-                お問い合わせ
-              </Link>
-            </nav>
-          </div>
-          <Button className="bg-black text-white hover:bg-gray-800">ログイン</Button>
-        </div>
-      </header>
+      <Header
+        title="ScanMate"
+        links={[
+          { label: "機能", href: "#features" },
+          { label: "料金", href: "#pricing" },
+          { label: "事例", href: "#testimonials" },
+          { label: "サポート", href: "#support" },
+          { label: "チュートリアル", href: "#tutorial" },
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="py-20 px-4">
@@ -78,41 +63,25 @@ export default function LandingPage() {
       {/* Features Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">ScanMateの特徴</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            ScanMateの特徴
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <FileText className="h-12 w-12 text-blue-600 mb-4" />
-                <CardTitle>高精度なOCR技術</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  最新のAI技術により、手書き文字や印刷文字を高精度で認識。複雑なレイアウトにも対応します。
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <Zap className="h-12 w-12 text-green-600 mb-4" />
-                <CardTitle>高速処理</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  大量の文書も瞬時に処理。従来の手入力作業と比べて作業時間を大幅に短縮できます。
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <Shield className="h-12 w-12 text-purple-600 mb-4" />
-                <CardTitle>セキュリティ対応</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  企業レベルのセキュリティ基準に準拠。機密文書も安心してお任せいただけます。
-                </p>
-              </CardContent>
-            </Card>
+            <DescriptionCard
+              title="高精度なOCR技術"
+              description="最新のAI技術により、手書き文字や印刷文字を高精度で認識。複雑なレイアウトにも対応します。"
+              icon={<FileText className="h-12 w-12 text-blue-600 mb-4" />}
+            />
+            <DescriptionCard
+              title="高速処理"
+              description="大量の文書も瞬時に処理。従来の手入力作業と比べて作業時間を大幅に短縮できます。"
+              icon={<Zap className="h-12 w-12 text-green-600 mb-4" />}
+            />
+            <DescriptionCard
+              title="セキュリティ対応"
+              description="企業レベルのセキュリティ基準に準拠。機密文書も安心してお任せいただけます。"
+              icon={<Shield className="h-12 w-12 text-purple-600 mb-4" />}
+            />
           </div>
         </div>
       </section>
@@ -120,28 +89,29 @@ export default function LandingPage() {
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">お困りではありませんか？</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            お困りではありませんか？
+          </h2>
           <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>手書きの文字も認識できますか？</AccordionTrigger>
-                <AccordionContent>
-                  はい、ScanMateは手書き文字の認識にも対応しています。日本語の手書き文字を高精度で認識し、デジタル化することができます。
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>どのような形式で出力されますか？</AccordionTrigger>
-                <AccordionContent>
-                  テキストファイル、CSV、Excel、PDFなど、様々な形式での出力に対応しています。用途に応じて最適な形式をお選びいただけます。
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>セキュリティは大丈夫ですか？</AccordionTrigger>
-                <AccordionContent>
-                  はい、企業レベルのセキュリティ基準に準拠しており、データの暗号化や安全な処理環境を提供しています。
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            <AccordionComponent
+              accordionItems={[
+                {
+                  title: "手書きの文字をデジタル化したい",
+                  content:
+                    "ScanMateは手書きの文字も高精度で認識します。手書きのメモや書類も簡単にデジタル化できます。",
+                },
+                {
+                  title: "大量の文書を効率よく処理したい",
+                  content:
+                    "高速な処理能力により、大量の文書も瞬時にデジタル化。業務効率が大幅に向上します。",
+                },
+                {
+                  title: "セキュリティが心配",
+                  content:
+                    "企業レベルのセキュリティ基準に準拠しており、機密文書も安心してご利用いただけます。",
+                },
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -149,7 +119,9 @@ export default function LandingPage() {
       {/* OCR Capabilities */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">ScanMateの機能一覧</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            ScanMateの機能一覧
+          </h2>
           <div className="text-center mb-8">
             <p className="text-gray-600">OCRで読み取りが可能な文書</p>
           </div>
@@ -189,14 +161,18 @@ export default function LandingPage() {
       {/* Usage Methods */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">使用方法・チュートリアル</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            使用方法・チュートリアル
+          </h2>
           <p className="text-center text-gray-600 mb-8">
             簡単な操作でAI-OCRをご利用いただけます。詳しい使用方法は以下のチュートリアルをご覧ください。
           </p>
           <div className="bg-white rounded-lg p-8 max-w-2xl mx-auto">
             <h3 className="text-xl font-semibold mb-4">チュートリアル動画</h3>
             <div className="bg-gray-100 h-48 rounded-lg flex items-center justify-center">
-              <p className="text-gray-500">チュートリアル動画がここに表示されます</p>
+              <p className="text-gray-500">
+                チュートリアル動画がここに表示されます
+              </p>
             </div>
           </div>
         </div>
@@ -207,89 +183,27 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">料金・プラン</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card>
-              <CardHeader>
-                <CardTitle>Light Plan</CardTitle>
-                <CardDescription>個人・小規模利用向け</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold mb-4">
-                  ¥0<span className="text-sm font-normal">/月</span>
-                </div>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-center">
-                    <Check className="h-4 w-4 text-green-500 mr-2" />
-                    月間100ページまで
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-4 w-4 text-green-500 mr-2" />
-                    基本OCR機能
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-4 w-4 text-green-500 mr-2" />
-                    1,800円
-                  </li>
-                </ul>
-                <Button className="w-full" variant="outline">
-                  無料で始める
-                </Button>
-              </CardContent>
-            </Card>
-            <Card className="border-2 border-blue-500">
-              <CardHeader>
-                <Badge className="w-fit mb-2">人気</Badge>
-                <CardTitle>Standard Plan</CardTitle>
-                <CardDescription>中小企業向け</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold mb-4">
-                  ¥100,000<span className="text-sm font-normal">/月</span>
-                </div>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-center">
-                    <Check className="h-4 w-4 text-green-500 mr-2" />
-                    月間10,000ページまで
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-4 w-4 text-green-500 mr-2" />
-                    高精度OCR機能
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-4 w-4 text-green-500 mr-2" />
-                    10,000円
-                  </li>
-                </ul>
-                <Button className="w-full">プランを選択</Button>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Premium Plan</CardTitle>
-                <CardDescription>大企業向け</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold mb-4">
-                  ¥200,000<span className="text-sm font-normal">/月</span>
-                </div>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-center">
-                    <Check className="h-4 w-4 text-green-500 mr-2" />
-                    無制限ページ
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-4 w-4 text-green-500 mr-2" />
-                    最高精度OCR機能
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-4 w-4 text-green-500 mr-2" />
-                    30,000円
-                  </li>
-                </ul>
-                <Button className="w-full" variant="outline">
-                  お問い合わせ
-                </Button>
-              </CardContent>
-            </Card>
+            <PlanCard
+              title="Light Plan"
+              description="個人・小規模利用向け"
+              price="0"
+              features={["月間100ページまで", "基本OCR機能", "1,800円"]}
+              selected={false}
+            />
+            <PlanCard
+              title="Standard Plan"
+              description="中小企業向け"
+              price="100,000"
+              features={["月間10,000ページまで", "高精度OCR機能", "10,000円"]}
+              selected={true}
+            />
+            <PlanCard
+              title="Premium Plan"
+              description="大企業向け"
+              price="200,000"
+              features={["無制限ページ", "最高精度OCR機能", "30,000円"]}
+              selected={false}
+            />
           </div>
         </div>
       </section>
@@ -297,35 +211,34 @@ export default function LandingPage() {
       {/* FAQ */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">よくあるご質問</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            よくあるご質問
+          </h2>
           <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible>
-              <AccordionItem value="faq-1">
-                <AccordionTrigger>どのような書類を読み取ることができますか？</AccordionTrigger>
-                <AccordionContent>
-                  印刷された文書、手書きの文書、表やフォーム、名刺、レシートなど、様々な種類の文書に対応しています。
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="faq-2">
-                <AccordionTrigger>無料で利用できる期間はありますか？</AccordionTrigger>
-                <AccordionContent>
-                  はい、Light
-                  Planでは月間100ページまで無料でご利用いただけます。また、14日間の無料トライアルもご用意しています。
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="faq-3">
-                <AccordionTrigger>読み取り精度はどの程度ですか？</AccordionTrigger>
-                <AccordionContent>
-                  印刷された文字では99%以上、手書き文字でも95%以上の高い精度を実現しています。
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="faq-4">
-                <AccordionTrigger>どのような形式で出力されますか？</AccordionTrigger>
-                <AccordionContent>
-                  テキスト、CSV、Excel、PDF、JSONなど、様々な形式での出力に対応しています。
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            <AccordionComponent
+              accordionItems={[
+                {
+                  title: "どのような書類を読み取ることができますか？",
+                  content:
+                    "印刷された文書、手書きの文書、表やフォーム、名刺、レシートなど、様々な種類の文書に対応しています。",
+                },
+                {
+                  title: "無料で利用できる期間はありますか？",
+                  content:
+                    "はい、Light Planでは月間100ページまで無料でご利用いただけます。また、14日間の無料トライアルもご用意しています。",
+                },
+                {
+                  title: "読み取り精度はどの程度ですか？",
+                  content:
+                    "印刷された文字では99%以上、手書き文字でも95%以上の高い精度を実現しています。",
+                },
+                {
+                  title: "どのような形式で出力されますか？",
+                  content:
+                    "テキスト、CSV、Excel、PDF、JSONなど、様々な形式での出力に対応しています。",
+                },
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -348,7 +261,10 @@ export default function LandingPage() {
                 </div>
                 <div className="flex mb-2">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    <Star
+                      key={i}
+                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                    />
                   ))}
                 </div>
                 <p className="text-gray-600">
@@ -369,10 +285,15 @@ export default function LandingPage() {
                 </div>
                 <div className="flex mb-2">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    <Star
+                      key={i}
+                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                    />
                   ))}
                 </div>
-                <p className="text-gray-600">レシートや伝票の処理が自動化され、経理業務の効率が大幅に向上しました。</p>
+                <p className="text-gray-600">
+                  レシートや伝票の処理が自動化され、経理業務の効率が大幅に向上しました。
+                </p>
               </CardContent>
             </Card>
             <Card>
@@ -388,10 +309,15 @@ export default function LandingPage() {
                 </div>
                 <div className="flex mb-2">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    <Star
+                      key={i}
+                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                    />
                   ))}
                 </div>
-                <p className="text-gray-600">患者記録のデジタル化が簡単になり、医療スタッフの負担が軽減されました。</p>
+                <p className="text-gray-600">
+                  患者記録のデジタル化が簡単になり、医療スタッフの負担が軽減されました。
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -407,7 +333,11 @@ export default function LandingPage() {
             <Button size="lg" className="bg-white text-black hover:bg-gray-100">
               無料トライアル
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-black hover:bg-gray-100 "
+            >
               資料請求
             </Button>
           </div>
@@ -415,61 +345,34 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-50 py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="font-bold text-lg mb-4">ScanMate</h3>
-              <p className="text-gray-600">AI-OCRサービスで業務効率化を実現</p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">製品</h4>
-              <ul className="space-y-2 text-gray-600">
-                <li>
-                  <Link href="#">機能</Link>
-                </li>
-                <li>
-                  <Link href="#">料金</Link>
-                </li>
-                <li>
-                  <Link href="#">API</Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">サポート</h4>
-              <ul className="space-y-2 text-gray-600">
-                <li>
-                  <Link href="#">ヘルプセンター</Link>
-                </li>
-                <li>
-                  <Link href="#">チュートリアル</Link>
-                </li>
-                <li>
-                  <Link href="#">お問い合わせ</Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">会社情報</h4>
-              <ul className="space-y-2 text-gray-600">
-                <li>
-                  <Link href="#">会社概要</Link>
-                </li>
-                <li>
-                  <Link href="#">プライバシーポリシー</Link>
-                </li>
-                <li>
-                  <Link href="#">利用規約</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t mt-8 pt-8 text-center text-gray-600">
-            <p>&copy; 2024 ScanMate. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer
+        footerSections={[
+          {
+            title: "製品",
+            links: [
+              { label: "機能", href: "#" },
+              { label: "料金", href: "#" },
+              { label: "API", href: "#" },
+            ],
+          },
+          {
+            title: "サポート",
+            links: [
+              { label: "ヘルプセンター", href: "#" },
+              { label: "チュートリアル", href: "#" },
+              { label: "お問い合わせ", href: "#" },
+            ],
+          },
+          {
+            title: "会社情報",
+            links: [
+              { label: "会社概要", href: "#" },
+              { label: "プライバシーポリシー", href: "#" },
+              { label: "利用規約", href: "#" },
+            ],
+          },
+        ]}
+      />
     </div>
-  )
+  );
 }
