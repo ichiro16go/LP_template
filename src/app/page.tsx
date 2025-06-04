@@ -33,7 +33,7 @@ export default function LandingPage() {
             AIに任せてみませんか？
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            手書きの文字や印刷された文字を瞬時にデジタル化。
+            どんな紙の帳票でも丸ごと読み取り。
             <br />
             面倒な手入力作業を大幅に削減し、ビジネスプロセスの効率化を実現します。
           </p>
