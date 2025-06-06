@@ -26,7 +26,6 @@ export default function LandingPage() {
         ]}
       />
       
-
       {/* Hero Section */}
       <section className="py-40 px-4 bg-white">
         <div className="container mx-auto text-center">
@@ -68,9 +67,13 @@ export default function LandingPage() {
       {/* Features Section */}
       <section className="py-16 bg-blue-50 " id="features">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
+        <div className="flex items-center justify-center mb-12">
+          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+          <h2 className="text-3xl font-bold text-blue-800 text-center mx-4 whitespace-nowrap">
             ScanMateの特徴
           </h2>
+          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+        </div>
           <div className="space-y-8">
             {/* Feature 1 */}
             <div className="bg-white rounded-lg overflow-hidden flex flex-col md:flex-row shadow-lg">
@@ -140,9 +143,13 @@ export default function LandingPage() {
       {/* Issue Section */}
       <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">
+        <div className="flex items-center justify-center mb-12">
+          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+          <h2 className="text-3xl font-bold text-blue-800 text-center mx-4 whitespace-nowrap">
             お困りではありませんか？
           </h2>
+          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+        </div>
           <ul className="space-y-6 max-w-3xl mx-auto">
             <li className="flex items-start">
               <div className="flex-shrink-0 mt-1">
@@ -190,7 +197,7 @@ export default function LandingPage() {
       {/* Procedure */}
       <section className="py-16 bg-white" id="procedure">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">
+          <h2 className="text-4xl font-bold text-blue-800 text-center mb-12">
             ScanMateの使い方
           </h2>
 
@@ -311,9 +318,13 @@ export default function LandingPage() {
       {/* OCR Capabilities */}
       <section className="py-16 bg-gradient-to-b from-white via-blue-50 to-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">
+        <div className="flex items-center justify-center mb-12">
+          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+          <h2 className="text-3xl font-bold text-blue-800 text-center mx-4 whitespace-nowrap">
             ScanMateの機能一覧
           </h2>
+          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+        </div>
           <div className="text-center mb-8">
             <p className="text-lg text-gray-800">読み取りが可能な文字</p>
           </div>
@@ -378,9 +389,13 @@ export default function LandingPage() {
       {/* Usage Methods */}
       <section className="py-16 bg-white" id="support">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">
+        <div className="flex items-center justify-center mb-12">
+          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+          <h2 className="text-3xl font-bold text-blue-800 text-center mx-4 whitespace-nowrap">
             使用方法・チュートリアル
           </h2>
+          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+        </div>
           <p className="text-center text-lg text-gray-800 mb-8">
             誰でも簡単に使える、シンプルな設計。詳しい使用方法は以下のチュートリアルをご覧ください。
           </p>
@@ -398,7 +413,7 @@ export default function LandingPage() {
       {/* Pricing */}
       <section className="py-16" id="pricing">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">料金・プラン</h2>
+          <h2 className="text-4xl font-bold text-blue-800 text-center mb-12">料金・プラン</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <PlanCard
               title="Light Plan"
@@ -428,9 +443,13 @@ export default function LandingPage() {
       {/* FAQ */}
       <section className="py-16 bg-blue-50" id="faq">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
+        <div className="flex items-center justify-center mb-12">
+          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+          <h2 className="text-3xl font-bold text-blue-800 text-center mx-4 whitespace-nowrap">
             よくあるご質問
           </h2>
+          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+        </div>
           <div className="max-w-3xl mx-auto">
             <AccordionComponent
               accordionItems={[
@@ -473,7 +492,7 @@ export default function LandingPage() {
       {/* Testimonials */}
       <section className="py-16 bg-gradient-to-b from-blue-50 to-white" id="testimonials">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">導入実績</h2>
+          <h2 className="text-4xl font-bold text-blue-800 text-center mb-12">導入実績</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card>
               <CardContent className="p-6">
