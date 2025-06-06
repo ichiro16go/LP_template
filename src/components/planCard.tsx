@@ -17,7 +17,7 @@ export default function PlanCard({title,description,price,features,selected}:Pla
     return(
         <Card className={cardClass}>
         <CardHeader>
-          <CardTitle>{title}</CardTitle>
+          <CardTitle className="text-2xl font-semibold">{title}</CardTitle>
           <CardDescription>{description}</CardDescription>
         </CardHeader>
         <CardContent>
