@@ -16,11 +16,11 @@ export default function LandingPage() {
       <Header
         title="ScanMate"
         links={[
-          { label: "機能", href: "#features" },
-          { label: "料金", href: "#pricing" },
-          { label: "事例", href: "#testimonials" },
-          { label: "サポート", href: "#support" },
-          { label: "チュートリアル", href: "#tutorial" },
+          { label: "製品特徴", href: "#features" },
+          { label: "料金・プラン", href: "#pricing" },
+          { label: "導入事例", href: "#testimonials" },
+          { label: "使用方法・チュートリアル", href: "#support" },
+          { label: "お問い合わせ", href: "#tutorial" },
         ]}
       />
 
@@ -35,14 +35,14 @@ export default function LandingPage() {
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             どんな紙の帳票でも丸ごと読み取り。
             <br />
-            Git難しい。
+            欲しい情報だけを表形式で抜き出せる、シンプルかつパワフルな次世代OCR。
           </p>
           <div className="flex gap-4 justify-center">
             <Button size="lg" className="bg-black text-white hover:bg-gray-800">
               無料で試す
             </Button>
             <Button size="lg" variant="outline">
-              機能を見る
+              デモを見る
             </Button>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function LandingPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <div className="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4">デモ画面/画像</h2>
+            <h2 className="text-2xl font-bold mb-4">Demo</h2>
             <div className="bg-gray-100 h-64 rounded-lg flex items-center justify-center">
               <p className="text-gray-500">デモ画面がここに表示されます</p>
             </div>
@@ -68,18 +68,18 @@ export default function LandingPage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <DescriptionCard
-              title="高精度なOCR技術"
-              description="最新のAI技術により、手書き文字や印刷文字を高精度で認識。複雑なレイアウトにも対応します。"
-              icon={<FileText className="h-12 w-12 text-blue-600 mb-4" />}
+              title="誰でも使える、シンプルな設計"
+              description="書類を1ページ丸ごと読み取るため、従来のOCR製品では必須だったテンプレート登録が不要。必要なのは欲しい情報の指定だけ。"
+              icon={<FileText className="h-12 w-12 text-blue-600 mb-4" />} // ここは画像に変えたい
             />
             <DescriptionCard
-              title="高速処理"
-              description="大量の文書も瞬時に処理。従来の手入力作業と比べて作業時間を大幅に短縮できます。"
+              title="フォーマットのバージョン変更にも柔軟に対応"
+              description="AIがPDF内を探索するため、場所の指定が不要。帳票のバージョン変更も怖くありません。"
               icon={<Zap className="h-12 w-12 text-green-600 mb-4" />}
             />
             <DescriptionCard
-              title="セキュリティ対応"
-              description="企業レベルのセキュリティ基準に準拠。機密文書も安心してお任せいただけます。"
+              title="AIによるパワフルなアシスト機能"
+              description="印字はもちろん、手書き文字やスタンプもAIが自動で判別。まるで人間が作業しているかのような、驚きのOCR体験を。"
               icon={<Shield className="h-12 w-12 text-purple-600 mb-4" />}
             />
           </div>
@@ -96,19 +96,19 @@ export default function LandingPage() {
             <AccordionComponent
               accordionItems={[
                 {
-                  title: "手書きの文字をデジタル化したい",
+                  title: "大量の請求書や領収書を効率よく処理したい",
                   content:
-                    "ScanMateは手書きの文字も高精度で認識します。手書きのメモや書類も簡単にデジタル化できます。",
+                    "紙や画像で送られてくる大量の帳票を手入力していませんか？ScanMateならPDFの請求書をアップロードするだけで、必要な情報だけをCSVに自動抽出。", // 画像足したい
                 },
                 {
-                  title: "大量の文書を効率よく処理したい",
+                  title: "書類処理に追われて、本業に集中できない",
                   content:
-                    "高速な処理能力により、大量の文書も瞬時にデジタル化。業務効率が大幅に向上します。",
+                    "少人数で回す業務では、帳票処理も大きな負担。ScanMateを使えば、もう、書類処理で時間を奪われる必要はありません。",
                 },
                 {
-                  title: "セキュリティが心配",
+                  title: "商談メモや注文書のExcel転記が面倒",
                   content:
-                    "企業レベルのセキュリティ基準に準拠しており、機密文書も安心してご利用いただけます。",
+                    "手書き・PDF・FAX…バラバラな形式の注文書から、毎回必要項目を探して転記していませんか？ScanMateは、印字やスタンプ、手書き文字が混在した文書でも読み取りが可能。入力の手間を大幅に削減します。",
                 },
               ]}
             />
@@ -129,8 +129,9 @@ export default function LandingPage() {
             <Card>
               <CardContent className="p-6 text-center">
                 <div className="bg-gray-100 h-24 rounded mb-4"></div>
-                <h3 className="font-semibold">印刷された文字</h3>
-                <p className="text-sm text-gray-600">活字</p>
+                <h3 className="font-semibold">はみだし、二重線</h3>
+                <p className="text-sm text-gray-600">レイアウトに依存しない情報抽出設計で、AIがカラム名に対応する情報を推測し、自動で転記。
+                </p>
               </CardContent>
             </Card>
             <Card>
@@ -165,7 +166,7 @@ export default function LandingPage() {
             使用方法・チュートリアル
           </h2>
           <p className="text-center text-gray-600 mb-8">
-            簡単な操作でAI-OCRをご利用いただけます。詳しい使用方法は以下のチュートリアルをご覧ください。
+          誰でも簡単に使える、シンプルな設計。詳しい使用方法は以下のチュートリアルをご覧ください。
           </p>
           <div className="bg-white rounded-lg p-8 max-w-2xl mx-auto">
             <h3 className="text-xl font-semibold mb-4">チュートリアル動画</h3>
@@ -178,6 +179,48 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Procedure */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            ScanMateの使い方
+          </h2>
+          <div className="text-center mb-8">
+            <p className="text-gray-600">簡単4ステップ</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="bg-gray-100 h-24 rounded mb-4"></div>
+                <h3 className="font-semibold">読み取りたいPDFのアップロード</h3>
+                <p className="text-sm text-gray-600">一度に複数の帳票をアップロード可能です。</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="bg-gray-100 h-24 rounded mb-4"></div>
+                <h3 className="font-semibold">必要なカラム名を指定</h3>
+                <p className="text-sm text-gray-600">帳票の項目名など、AIに参照させたい場所を指定します。</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="bg-gray-100 h-24 rounded mb-4"></div>
+                <h3 className="font-semibold">【任意】プロンプトの設定</h3>
+                <p className="text-sm text-gray-600">読み取る際に追加で特別な指示を指定できます。</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="bg-gray-100 h-24 rounded mb-4"></div>
+                <h3 className="font-semibold">実行結果の確認・修正</h3>
+                <p className="text-sm text-gray-600">実行ボタンを押すと処理が開始。実行結果の表を見ながら、結果の確認と修正を行います。</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -186,22 +229,22 @@ export default function LandingPage() {
             <PlanCard
               title="Light Plan"
               description="個人・小規模利用向け"
-              price="0"
-              features={["月間100ページまで", "基本OCR機能", "1,800円"]}
+              price="30,000"
+              features={["月間1,800ページまで", "1枚あたり16円", "1,801枚目以降は15円/枚"]}
               selected={false}
             />
             <PlanCard
               title="Standard Plan"
               description="中小企業向け"
               price="100,000"
-              features={["月間10,000ページまで", "高精度OCR機能", "10,000円"]}
+              features={["月間10,000ページまで", "1枚あたり10円", "10,001枚目以降は15円/枚"]}
               selected={true}
             />
             <PlanCard
               title="Premium Plan"
               description="大企業向け"
               price="200,000"
-              features={["無制限ページ", "最高精度OCR機能", "30,000円"]}
+              features={["月間30,000ページまで", "1枚あた6円", "30,001枚目以降は5円/枚"]}
               selected={false}
             />
           </div>
@@ -218,24 +261,34 @@ export default function LandingPage() {
             <AccordionComponent
               accordionItems={[
                 {
-                  title: "どのような書類を読み取ることができますか？",
+                  title: "どのような形式の帳票に対応していますか？",
                   content:
-                    "印刷された文書、手書きの文書、表やフォーム、名刺、レシートなど、様々な種類の文書に対応しています。",
+                    "PDF形式であれば、請求書や申込書、アンケート調査票、名刺など幅広い書類に対応しています。同一内容でレイアウトが多少異なる帳票にも柔軟に対応します。",
                 },
                 {
-                  title: "無料で利用できる期間はありますか？",
+                  title: "手書きの文字は読み取れますか？",
                   content:
-                    "はい、Light Planでは月間100ページまで無料でご利用いただけます。また、14日間の無料トライアルもご用意しています。",
+                    "手書き文字も認識可能ですが、印刷されたテキストにてより高い精度を発揮します。特に筆記体や崩れた文字は誤認識の可能性があるため、重要な項目については手書きではなく印刷入力を推奨しています。",
                 },
                 {
-                  title: "読み取り精度はどの程度ですか？",
+                  title: "指定する「カラム名」とは何ですか？",
                   content:
-                    "印刷された文字では99%以上、手書き文字でも95%以上の高い精度を実現しています。",
+                    "CSVに出力したい情報のラベルの名前を指します（例：「氏名」「申込日」「合計金額」「診断理由」など）。カラム名を入力するだけで、AIが帳票の文脈を理解し、対応する情報を自動的に抽出します。",
                 },
                 {
-                  title: "どのような形式で出力されますか？",
+                  title: "セキュリティや個人情報の取り扱いは大丈夫ですか？",
                   content:
-                    "テキスト、CSV、Excel、PDF、JSONなど、様々な形式での出力に対応しています。",
+                    "はい、安心してご利用いただけます。すべてのファイルはSSL通信で暗号化されます。また、処理するデータは大規模言語モデルの学習に一切使用されません。",
+                },
+                {
+                  title: "誤認識や抽出ミスがあった場合はどうなりますか？",
+                  content:
+                    "抽出結果はCSV形式で確認・修正可能なため、簡単に再編集できます。また、フィードバックをいただいてモデルの抽出精度を改善する機能も、今後搭載予定です。",
+                },
+                {
+                  title: "大量の帳票を一括処理できますか？",
+                  content:
+                    "はい、複数ファイルの一括アップロード・一括処理にも対応しています。",
                 },
               ]}
             />
