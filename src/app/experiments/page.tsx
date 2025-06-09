@@ -13,40 +13,58 @@ import PlanCard from "@/components/planCard";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-blue-50 to-green-50 p-8">
+    <div className="min-h-screen bg-blue-50 p-8">
       {/* Header */}
       <Header
         links={[
           { label: "製品特徴", href: "#features" },
           { label: "料金・プラン", href: "#pricing" },
           { label: "導入事例", href: "#testimonials" },
-          { label: "使用方法・チュートリアル", href: "#support" },
+          { label: "チュートリアル", href: "#support" },
           { label: "お問い合わせ", href: "#tutorial" },
         ]}
       />
       
       {/* Hero Section */}
-      <section className="py-60 px-4 bg-white">
-        <div className="container mx-auto text-center">
+      <section id="hero" className="relative h-200 flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div
+            className="absolute inset-[-60px] bg-cover bg-center filter blur-2xl scale-130"
+            style={{ backgroundImage: "url('/hero_section_1.png')" }}
+          ></div>
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/hero_section_1.png')" }}
+          ></div>
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `
+                radial-gradient(circle at center, transparent 80%, #EFF6FF 100%),
+                linear-gradient(to bottom, #EFF6FF 0%, transparent 20%, transparent 70%, #EFF6FF 100%),
+                linear-gradient(to left, #EFF6FF 0%, transparent 20%, transparent 80%, #EFF6FF 100%),
+                linear-gradient(to right, #EFF6FF 0%, transparent 20%, transparent 80%, #EFF6FF 100%)
+              `,
+            }}
+          ></div>
+        </div>
+        <div className="absolute inset-0 bg-black-100/40 backdrop-blur-sm"></div>
+        <div className="relative container mx-auto text-center z-10">
           <div className="flex items-center justify-center mb-6">
-            <div className="flex-grow h-px bg-[#00AFC4]"></div>
-            <h1 className="mx-6 text-6xl font-extrabold bg-gradient-to-r from-blue-800 to-green-600 bg-clip-text text-transparent">
+            <div className="flex-grow h-px bg-blue-500"></div>
+            <h1 className="mx-6 text-6xl font-extrabold bg-gradient-to-r from-blue-100 to-green-100 bg-clip-text text-transparent drop-shadow-xl">
               そのデータの手入力、<br />AIに任せてみませんか？
             </h1>
-            <div className="flex-grow h-px bg-blue-800"></div>
+            <div className="flex-grow h-px bg-green-500"></div>
           </div>
-          <p className="text-2xl font-semibold text-gray-600 mb-8 max-w-2xl mx-auto">
-            どんな紙の帳票でも丸ごと読み取り。
-            <br />
-            <span className="flex whitespace-nowrap justify-center mb-6">
-              欲しい情報だけを表形式で抜き出せる、シンプルかつパワフルな次世代OCR。
-            </span>
+          <p className="text-2xl font-semibold text-white mb-8 max-w-2xl mx-auto drop-shadow-md">
+            どんな紙の帳票でも丸ごと読み取り。<br />欲しい情報だけを表形式で抜き出せる、シンプルかつパワフルな次世代OCR。
           </p>
           <div className="flex gap-4 justify-center">
-            <Button size="lg" className="bg-blue-800 text-white hover:bg-blue-700">
+            <Button size="lg" className="bg-black text-white hover:bg-gray-700">
               無料で試す
             </Button>
-            <Button size="lg" variant="outline" className="border-blue-800 text-blue-800 hover:bg-blue-50">
+            <Button size="lg" variant="outline" className="border-black text-black hover:bg-gray-200">
               デモを見る
             </Button>
           </div>
@@ -54,13 +72,10 @@ export default function LandingPage() {
       </section>
 
       {/* Demo Section */}
-      <section className="py-16 bg-gradient-to-b from-white via-green-50 to-blue-50">
-        <div className="container mx-auto px-4 text-center">
-          <div className="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold font-semibold mb-4">Demo</h2>
-            <div className="bg-gray-100 h-100 rounded-lg flex items-center justify-center">
-              <p className="text-xl text-gray-500">デモ画面がここに表示されます</p>
-            </div>
+      <section className="py-16 bg-blue-50">
+        <div className="container mx-auto px-4 text-center items-center justify-center">
+          <div className="bg-white h-120 mx-70 rounded-lg flex items-center justify-center">
+            <p className="text-xl text-gray-500">デモ画面がここに表示されます</p>
           </div>
         </div>
       </section>
@@ -80,9 +95,9 @@ export default function LandingPage() {
             <div className="bg-white rounded-lg overflow-hidden flex flex-col md:flex-row shadow-lg">
               <div className="md:w-1/2">
                 <img
-                  src="/images/feature-format.svg"
+                  src="/how_to_work.png"
                   alt="シンプルな設計"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto max-h-48 object-contain"
                 />
               </div>
               <div className="md:w-1/2 p-8 flex items-center">
@@ -91,7 +106,7 @@ export default function LandingPage() {
                     誰でも使える、シンプルな設計
                   </h3>
                   <p className="text-lg font-semibold text-gray-800">
-                    書類を1ページ丸ごと読み取るため、<br />従来のOCR製品では必須だったテンプレート登録が不要。<br />必要なのは欲しい情報の指定だけ。
+                    書類を1ページ丸ごと読み取るため、従来のOCR製品では必須だったテンプレート登録が不要。必要なのは欲しい情報の指定だけ。
                   </p>
                 </div>
               </div>
@@ -100,9 +115,9 @@ export default function LandingPage() {
             <div className="bg-white rounded-lg overflow-hidden flex flex-col md:flex-row shadow-lg">
               <div className="md:w-1/2 md:order-2">
                 <img
-                  src="/images/feature-security.svg"
+                  src="/security_icon.png"
                   alt="AWSセキュア環境"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto max-h-48 object-contain"
                 />
               </div>
               <div className="md:w-1/2 p-8 md:order-1 flex items-center">
@@ -111,7 +126,7 @@ export default function LandingPage() {
                     AWSセキュア環境
                   </h3>
                   <p className="text-lg font-semibold text-gray-800">
-                    データはAWS上で暗号化保管。<br />堅牢なセキュリティで安心してご利用いただけます。
+                    データはAWS上で暗号化保管。堅牢なセキュリティで安心してご利用いただけます。
                   </p>
                 </div>
               </div>
@@ -120,9 +135,9 @@ export default function LandingPage() {
             <div className="bg-white rounded-lg overflow-hidden flex flex-col md:flex-row shadow-lg">
               <div className="md:w-1/2">
                 <img
-                  src="/images/feature-easy.svg"
+                  src="/AI_processing.png"
                   alt="簡単操作"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto max-h-48 object-contain"
                 />
               </div>
               <div className="md:w-1/2 p-8 flex items-center">
@@ -131,7 +146,7 @@ export default function LandingPage() {
                     AIによるパワフルなアシスト機能
                   </h3>
                   <p className="text-lg font-semibold text-gray-800">
-                    印字はもちろん、手書き文字やスタンプもAIが自動で判別。<br />まるで人間が作業しているかのような、驚きのOCR体験を。
+                    印字はもちろん、手書き文字やスタンプもAIが自動で判別。まるで人間が作業しているかのような、驚きのOCR体験を。
                   </p>
                 </div>
               </div>
@@ -141,7 +156,7 @@ export default function LandingPage() {
       </section>
 
       {/* Issue Section */}
-      <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-16 bg-blue-50">
         <div className="container mx-auto px-4 max-w-4xl mb-8">
         <div className="flex items-center justify-center mb-12">
           <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
@@ -195,8 +210,8 @@ export default function LandingPage() {
       </section>
 
       {/* Procedure */}
-      <section className="py-16 bg-gradient-to-b from-white via-green-50 to-white" id="procedure">
-        <div className="container mx-auto px-4 bg-gradient-to-b from-white via-green-50 to-white">
+      <section className="py-16 bg-blue-50" id="procedure">
+        <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold font-semibold text-blue-800 text-center mb-12">
             ScanMateの使い方
           </h2>
@@ -204,26 +219,16 @@ export default function LandingPage() {
           {/* 横並び：幅が狭くなると縦並びになるflex設定 */}
           <div className="flex flex-col md:flex-row items-center justify-center">
             {/* Step 1 */}
-            <div className="flex flex-col items-center bg-gray-50 border border-gray-200 rounded-lg p-6 w-64 h-80">
+            <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-6 w-64 h-80">
               {/* 番号とアイコン */}
               <div className="flex flex-col items-center mb-4">
-                <span className="text-xl font-bold text-blue-800 mb-2">1</span>
-                {/* 例：クラウドアップロードのSVGアイコン */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10 text-blue-800"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                    d="M3 15a4 4 0 000 8h12a4 4 0 000-8M7 15V7a4 4 0 018 0v8m-6 0h6"
-                  />
-                </svg>
+                <span className="text-2xl font-bold text-blue-800 mb-2">1</span>
+                {/* クラウドアップロードPNGアイコン */}
+                <img src="/1_upload_icon.png" alt="クラウドアップロードアイコン" className="h-20 w-20" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800">PDFをアップロード</h3>
+              <h3 className="text-xl text-center font-semibold text-gray-800">PDFをアップロード</h3>
               <p className="text-lg font-semibold text-gray-600 text-center mt-2">
-                帳票のアップロードを<br />行います。一枚ずつも<br />複数枚も可能です。
+                帳票のアップロードを行います。一枚ずつも、複数枚も可能です。
               </p>
             </div>
 
@@ -233,25 +238,15 @@ export default function LandingPage() {
             </div>
 
             {/* Step 2 */}
-            <div className="flex flex-col items-center bg-gray-50 border border-gray-200 rounded-lg p-6 w-64 h-80 mt-8 md:mt-0">
+            <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-6 w-64 h-80 mt-8 md:mt-0">
               <div className="flex flex-col items-center mb-4">
-                <span className="text-xl font-bold text-blue-800 mb-2">2</span>
-                {/* 例：タグ（カラム指定）のSVGアイコン */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10 text-blue-800"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                    d="M5 3v18h14V3H5zm5 2h4v2h-4V5zm0 4h4v2h-4V9zm0 4h4v2h-4v-2zm0 4h4v2h-4v-2z"
-                  />
-                </svg>
+                <span className="text-2xl font-bold text-blue-800 mb-2">2</span>
+                {/* タグPNGアイコン */}
+                <img src="/2_column_icon.png" alt="タグアイコン" className="h-20 w-20" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800">カラム名を指定</h3>
+              <h3 className="text-xl text-center font-semibold text-gray-800">カラム名を指定</h3>
               <p className="text-lg font-semibold text-gray-600 text-center mt-2">
-                帳票の項目名<br />（例：氏名、合計金額）<br />を入力します。
+                帳票の項目名（例：氏名、合計金額）を入力します。
               </p>
             </div>
 
@@ -261,25 +256,15 @@ export default function LandingPage() {
             </div>
 
             {/* Step 3 */}
-            <div className="flex flex-col items-center bg-gray-50 border border-gray-200 rounded-lg p-6 w-64 h-80 mt-8 md:mt-0">
+            <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-6 w-64 h-80 mt-8 md:mt-0">
               <div className="flex flex-col items-center mb-4">
-                <span className="text-xl font-bold text-blue-800 mb-2">3</span>
-                {/* 例：歯車アイコン（プロンプト設定） */}
-                <svg
-                  xmlns="prompt_engineering.png"
-                  className="h-10 w-10 text-blue-800"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                    d="M12 8c-1.105 0-2 .895-2 2 0 .91.586 1.674 1.396 1.905l.204.045v3.05c0 .69.56 1.25 1.25 1.25s1.25-.56 1.25-1.25v-3.05l.204-.045A2 2 0 0014 10c0-1.105-.895-2-2-2zm0-7c-1.105 0-2 .895-2 2v.09a8.002 8.002 0 00-3.536 1.934l-.064.064L3.464 4.646a2 2 0 00-2.828 2.828l1.444 1.444a7.956 7.956 0 001.934 3.536H4a2 2 0 100 4h.09a8.002 8.002 0 001.934 3.536l.064.064L5.464 20.54a2 2 0 002.828 2.828l1.444-1.444a7.956 7.956 0 003.536-1.934V20a2 2 0 004 0v-.09a8.002 8.002 0 003.536-1.934l.064-.064 1.444 1.444a2 2 0 002.828-2.828l-1.444-1.444a7.956 7.956 0 00-1.934-3.536H20a2 2 0 100-4h-.09a8.002 8.002 0 00-1.934-3.536l-.064-.064 1.444-1.444a2 2 0 00-2.828-2.828l-1.444 1.444a7.956 7.956 0 00-3.536 1.934V4a2 2 0 00-2-2z"
-                  />
-                </svg>
+                <span className="text-2xl font-bold text-blue-800 mb-2">3</span>
+                {/* 歯車PNGアイコン */}
+                <img src="/3_prompt_icon.png" alt="歯車アイコン" className="h-20 w-20" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800">プロンプトを設定</h3>
+              <h3 className="text-xl text-center font-semibold text-gray-800">プロンプトを設定</h3>
               <p className="text-lg font-semibold text-gray-600 text-center mt-2">
-                必要に応じて<br />AIへの追加の指示を<br />入力します。
+                必要に応じてAIへの追加の指示を入力します。
               </p>
             </div>
 
@@ -289,34 +274,24 @@ export default function LandingPage() {
             </div>
 
             {/* Step 4 */}
-            <div className="flex flex-col items-center bg-gray-50 border border-gray-200 rounded-lg p-6 w-64 h-80 mt-8 md:mt-0">
+            <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-6 w-64 h-80 mt-8 md:mt-0">
               <div className="flex flex-col items-center mb-4">
-                <span className="text-xl font-bold text-blue-800 mb-2">4</span>
-                {/* 例：チェックアイコン（結果確認） */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10 text-blue-800"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                <span className="text-2xl font-bold text-blue-800 mb-2">4</span>
+                {/* チェックPNGアイコン */}
+                <img src="/4_check_icon.png" alt="チェックアイコン" className="h-20 w-20" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800">結果の確認・修正</h3>
+              <h3 className="text-xl text-center font-semibold text-gray-800">結果の確認・修正</h3>
               <p className="text-lg font-semibold text-gray-600 text-center mt-2">
-                実行後、出力された表を<br />見ながら、確認と修正を<br />行ってください。
+                実行後、出力された表を見ながら、確認と修正を行ってください。
               </p>
             </div>
-          </div>
+          </div>  
         </div>
       </section>
 
 
       {/* OCR Capabilities */}
-      <section className="py-16 bg-gradient-to-b from-white via-blue-50 to-white">
+      <section className="py-16 bg-blue-50">
         <div className="container mx-auto px-4">
         <div className="flex items-center justify-center mb-12">
           <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
@@ -330,26 +305,26 @@ export default function LandingPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card>
-              <CardContent className="p-6 text-center">
-                <div className="bg-gray-100 h-24 rounded mb-4"></div>
+              <CardContent className="p-6 flex flex-col items-center justify-center text-center">
+                <img src="/印字.png" alt="印字アイコン" className="h-40 w-auto"></img>
                 <h3 className="text-lg font-semibold">印字されたテキスト</h3>
               </CardContent>
             </Card>
             <Card>
-              <CardContent className="p-6 text-center">
-                <div className="bg-gray-100 h-24 rounded mb-4"></div>
+              <CardContent className="p-6 text-center items-center justify-center text-center">
+                <img src="/手書き文字.png" alt="手書き文字" className="h-40 w-auto"></img>
                 <h3 className="text-lg font-semibold">手書き文字 <br /> (鉛筆・カラーペンにも対応)</h3>
               </CardContent>
             </Card>
             <Card>
-              <CardContent className="p-6 text-center">
-                <div className="bg-gray-100 h-24 rounded mb-4"></div>
+              <CardContent className="p-6 text-center items-center justify-center text-center">
+                <img src="/スタンプ.png" alt="スタンプ" className="h-40 w-auto"></img>
                 <h3 className="text-lg font-semibold">会社印・スタンプ</h3>
               </CardContent>
             </Card>
             <Card>
-              <CardContent className="p-6 text-center">
-                <div className="bg-gray-100 h-24 rounded mb-4"></div>
+              <CardContent className="p-6 text-center items-center justify-center text-center">
+                <img src="/二重線.png" alt="二重線" className="h-40 w-auto"></img>
                 <h3 className="text-lg font-semibold">二重線での訂正・枠線からのはみ出し</h3>
               </CardContent>
             </Card>
@@ -387,7 +362,7 @@ export default function LandingPage() {
       </section>
 
       {/* Usage Methods */}
-      <section className="py-16 bg-white" id="support">
+      <section className="py-16 bg-blue-50" id="support">
         <div className="container mx-auto px-4">
         <div className="flex items-center justify-center mb-12">
           <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
@@ -411,8 +386,8 @@ export default function LandingPage() {
       </section>
 
       {/* Pricing */}
-      <section className="py-16 bg-gradient-to-b from-white to-blue-50" id="pricing">
-        <div className="container mx-auto px-4 bg-gradient-to-b from-white to-blue-50">
+      <section className="py-16 bg-blue-50" id="pricing">
+        <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold font-semibold text-blue-800 text-center mb-12">料金・プラン</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <PlanCard
@@ -467,7 +442,7 @@ export default function LandingPage() {
                 {
                   title: "指定する「カラム名」とは何ですか？",
                   content:
-                    "CSVに出力したい情報のラベルの名前を指します（例:「氏名」「申込日」「合計金額」「診断理由」など）。カラム名を入力するだけで、AIが帳票の文脈を理解し、対応する情報を自動的に抽出します。",
+                    "CSVに出力したい情報のラベルの名前を指します（例:「氏名」「申込日」「合計金額」「診断理由」）。カラム名を入力するだけで、AIが帳票の文脈を理解し、対応する情報を自動的に抽出します。",
                 },
                 {
                   title: "セキュリティや個人情報の取り扱いは大丈夫ですか？",
@@ -491,7 +466,7 @@ export default function LandingPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-gradient-to-b from-blue-50 to-white" id="testimonials">
+      <section className="py-16 bg-blue-50" id="testimonials">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold font-semibold text-blue-800 text-center mb-12">導入実績</h2>
           <div className="grid md:grid-cols-3 gap-8">
