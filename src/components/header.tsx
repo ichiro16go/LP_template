@@ -12,16 +12,17 @@ export default function Header({ links }: HeaderProps) {
   return (
     <header className="border-b bg-white/50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center space-x-8">
-          <div>
-            <Image
-              src="/ロゴ.png"
-              alt="サービスロゴ"
-              width={150}
-              height={50}
-              className="object-contain"
-            />
-          </div>
+        <div className="flex-shrink-0">
+          <Image
+            src="/ロゴ.png"
+            alt="サービスロゴ"
+            width={150}
+            height={50}
+            className="object-contain"
+          />
+        </div>
+
+        <div className="flex items-center space-x-6">
           <nav className="hidden md:flex space-x-6">
             {links.map((link, index) => (
               <Link href={link.href} key={index} className="text-lg hover:text-gray-600">
@@ -29,8 +30,8 @@ export default function Header({ links }: HeaderProps) {
               </Link>
             ))}
           </nav>
+          <Button className="text-lg bg-blue-800 text-white hover:bg-blue-700">ログイン</Button>
         </div>
-        <Button className="text-lg bg-blue-800 text-white hover:bg-blue-700">ログイン</Button>
       </div>
     </header>
   );
