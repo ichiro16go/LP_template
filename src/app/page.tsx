@@ -19,57 +19,58 @@ export default function LandingPage() {
         links={[
           { label: "製品特徴", href: "#features" },
           { label: "料金・プラン", href: "#pricing" },
-          { label: "導入事例", href: "#testimonials" },
+          { label: "機能一覧", href: "#testimonials" },
           { label: "チュートリアル", href: "#support" },
           { label: "お問い合わせ", href: "#tutorial" },
         ]}
       />
       
       {/* Hero Section */}
-      <section id="hero" className="relative h-200 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div
-            className="absolute inset-[-60px] bg-cover bg-center filter blur-2xl scale-130"
-            style={{ backgroundImage: "url('/hero_section_1.png')" }}
-          ></div>
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/hero_section_1.png')" }}
-          ></div>
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: `
-                radial-gradient(circle at center, transparent 80%, #EFF6FF 100%),
-                linear-gradient(to bottom, #EFF6FF 0%, transparent 20%, transparent 70%, #EFF6FF 100%),
-                linear-gradient(to left, #EFF6FF 0%, transparent 20%, transparent 80%, #EFF6FF 100%),
-                linear-gradient(to right, #EFF6FF 0%, transparent 20%, transparent 80%, #EFF6FF 100%)
-              `,
-            }}
-          ></div>
+      <section id="hero" className="relative h-200 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+        <div
+          className="w-[100%] h-full bg-cover bg-center translate-x-[-5%] brightness-90 mt-10"
+          style={{ backgroundImage: "url('/hero_section_1.png')" }}
+        />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at center, transparent 80%, #EFF6FF 100%),
+              linear-gradient(to top, #EFF6FF 0%, transparent 20%, transparent 70%, #EFF6FF 100%),
+              linear-gradient(to bottom, #EFF6FF 0%, transparent 20%, transparent 70%, #EFF6FF 100%),
+              linear-gradient(to left, #EFF6FF 0%, transparent 50%, transparent 80%, #EFF6FF 100%),
+              linear-gradient(to right, #EFF6FF 0%, transparent 10%, transparent 50%, #EFF6FF 100%)
+            `,
+          }}
+        ></div>
         </div>
-        <div className="absolute inset-0 bg-black-100/20 backdrop-blur-sm"></div>
-        <div className="relative container mx-auto text-center z-10">
-          <div className="flex items-center justify-center mb-6">
-            <div className="flex-grow h-px bg-blue-500"></div>
-            <h1 className="mx-6 text-5xl font-extrabold bg-gradient-to-r from-blue-100 to-green-100 bg-clip-text text-transparent drop-shadow-xl">
-              そのデータの手入力、<br />AIに任せてみませんか？
-            </h1>
-            <div className="flex-grow h-px bg-green-500"></div>
-          </div>
-          <p className="text-2xl font-semibold text-white mb-8 max-w-2xl mx-auto drop-shadow-md">
-            どんな紙の帳票でも丸ごと読み取り。<br />欲しい情報だけを表形式で抜き出せる、シンプルかつパワフルな次世代OCR。
+
+        <div className="relative z-10 h-full flex items-center justify-end pr-70 mt-10">
+        <div className="max-w-xl text-right">
+          <h1 className="text-5xl font-extrabold drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] leading-snug bg-gradient-to-r from-indigo-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
+            そのデータの手入力、<br />AIに任せてみませんか？
+          </h1>
+          <p className="text-2xl font-semibold text-gray-800 mt-6 mb-10 drop-shadow-md">
+          どんな紙の帳票でも丸ごと読み取り。<br />
+          欲しい情報だけを表形式で抜き出せる、<br />シンプルかつパワフルな次世代OCR。
           </p>
-          <div className="flex gap-4 justify-center">
+          <div className="flex gap-4 justify-end pr-24">
             <Button size="lg" className="bg-black text-white hover:bg-gray-700">
               無料で試す
             </Button>
-            <Button size="lg" variant="outline" className="border-black text-black hover:bg-gray-200">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-gray-800 hover:bg-gray-200"
+            >
               デモを見る
             </Button>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* Demo Section */}
       <section className="py-16 bg-blue-50">
@@ -468,8 +469,8 @@ export default function LandingPage() {
       {/* Specifications Section */}
       <section className="py-16 bg-blue-50" id="specifications">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="flex items-center justify-center mb-12">
-            <h2 className="text-4xl font-bold font-semibold text-blue-800 text-center mb-12">
+          <div className="flex items-center justify-center mb-8">
+            <h2 className="text-4xl font-bold font-semibold text-blue-800 text-center">
               製品仕様
             </h2>
           </div>
@@ -479,7 +480,7 @@ export default function LandingPage() {
               <thead className="bg-blue-100 text-blue-800 font-semibold">
                 <tr>
                   <th className="px-6 py-3 border-b">項目</th>
-                  <th className="px-6 py-3 border-b">内容</th>
+                  <th className="px-6 py-3 border-b">推奨スペック</th>
                 </tr>
               </thead>
               <tbody>
@@ -501,7 +502,7 @@ export default function LandingPage() {
                 </tr>
                 <tr>
                   <td className="px-6 py-4 border-b font-semibold">動作環境</td>
-                  <td className="px-6 py-4 border-b">インターネット接続（上り5Mbps以上推奨）、JavaScript有効化</td>
+                  <td className="px-6 py-4 border-b">インターネット接続、JavaScript有効化</td>
                 </tr>
               </tbody>
             </table>
@@ -616,16 +617,16 @@ export default function LandingPage() {
           {
             title: "製品",
             links: [
-              { label: "機能", href: "#" },
-              { label: "料金", href: "#" },
-              { label: "API", href: "#" },
+              { label: "製品特徴", href: "#" },
+              { label: "料金・プラン", href: "#" },
+              { label: "製品仕様", href: "#" },
             ],
           },
           {
             title: "サポート",
             links: [
-              { label: "ヘルプセンター", href: "#" },
               { label: "チュートリアル", href: "#" },
+              { label: "よくあるご質問", href: "#" },
               { label: "お問い合わせ", href: "#" },
             ],
           },
