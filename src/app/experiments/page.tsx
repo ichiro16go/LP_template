@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { FileText, Zap, Shield, Star } from "lucide-react";
 //componet
-import Header from "@/components/header";
 import Footer from "@/components/footer";
 import DescriptionCard from "@/components/discriptionCard";
 import AccordionComponent from "@/components/accordion";
@@ -12,17 +11,6 @@ import PlanCard from "@/components/planCard";
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <Header
-        title="ScanMate"
-        links={[
-          { label: "製品特徴", href: "#features" },
-          { label: "料金・プラン", href: "#pricing" },
-          { label: "導入事例", href: "#testimonials" },
-          { label: "使用方法・チュートリアル", href: "#support" },
-          { label: "お問い合わせ", href: "#tutorial" },
-        ]}
-      />
 
       {/* Hero Section */}
       <section className="py-20 px-4">
