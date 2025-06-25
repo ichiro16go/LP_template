@@ -48,7 +48,7 @@ export default function LandingPage() {
 
         <div className="relative z-10 h-full flex items-center justify-end pr-70 mt-10">
         <div className="max-w-xl text-right">
-          <h1 className="text-5xl font-extrabold drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] leading-snug bg-gradient-to-r from-indigo-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="flex text-5xl font-extrabold drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] leading-snug bg-gradient-to-r from-indigo-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
             そのデータの手入力、<br />AIに任せてみませんか？
           </h1>
           <p className="text-2xl font-semibold text-gray-800 mt-6 mb-10 drop-shadow-md">
@@ -225,7 +225,7 @@ export default function LandingPage() {
               <div className="flex flex-col items-center mb-4">
                 <span className="text-2xl font-bold text-blue-800 mb-2">1</span>
                 {/* クラウドアップロードPNGアイコン */}
-                <img src="/1_upload_icon.png" alt="クラウドアップロードアイコン" className="h-20 w-20" />
+                <img src="/1_upload_icon.png" alt="クラウドアップロードアイコン" className="h-20 w-20 ml-4" />
               </div>
               <h3 className="text-xl text-center font-semibold text-gray-800">PDFをアップロード</h3>
               <p className="text-lg font-semibold text-gray-600 text-center mt-2">
@@ -243,7 +243,7 @@ export default function LandingPage() {
               <div className="flex flex-col items-center mb-4">
                 <span className="text-2xl font-bold text-blue-800 mb-2">2</span>
                 {/* タグPNGアイコン */}
-                <img src="/2_column_icon.png" alt="タグアイコン" className="h-20 w-20" />
+                <img src="/2_column_icon.png" alt="タグアイコン" className="h-20 w-20 ml-4" />
               </div>
               <h3 className="text-xl text-center font-semibold text-gray-800">カラム名を指定</h3>
               <p className="text-lg font-semibold text-gray-600 text-center mt-2">
@@ -318,16 +318,16 @@ export default function LandingPage() {
               </CardContent>
             </Card>
             <Card>
-              <CardContent className="p-6 text-center items-center justify-center text-center">
-                <img src="/スタンプ.png" alt="スタンプ" className="h-40 w-auto"></img>
+              <CardContent className="p-6 flex flex-col items-center justify-center text-center">
+                <img src="/スタンプ.png" alt="スタンプ" className="h-40 w-50 mb-4"></img>
                 <h3 className="text-lg font-semibold">会社印・スタンプ</h3>
               </CardContent>
             </Card>
             <Card>
-              <CardContent className="p-6 text-center items-center justify-center text-center">
-                <img src="/二重線.png" alt="二重線" className="h-40 w-auto"></img>
+              <CardContent className="p-6 flex flex-col items-center justify-center text-center">
+                <img src="/二重線.png" alt="二重線" className="h-40 w-50 mb-4" />
                 <h3 className="text-lg font-semibold">二重線での訂正・枠線からのはみ出し</h3>
-              </CardContent>
+               </CardContent>
             </Card>
           </div>
           <div className="text-center mt-12 mb-8">
@@ -428,7 +428,7 @@ export default function LandingPage() {
         </div>
           <div className="text-6xl font-semibold max-w-3xl mx-auto">
             <AccordionComponent
-              className="text-2xl font-semibold"
+              className="text-2xl font-semibold bg-white p-8 rounded-lg"
               accordionItems={[
                 {
                   title: "どのような形式の帳票に対応していますか？",
@@ -477,7 +477,7 @@ export default function LandingPage() {
 
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white border border-gray-300 rounded-lg text-left text-sm">
-              <thead className="bg-blue-100 text-blue-800 font-semibold">
+              <thead className="bg-white font-semibold">
                 <tr>
                   <th className="px-6 py-3 border-b">項目</th>
                   <th className="px-6 py-3 border-b">推奨スペック</th>
