@@ -1,82 +1,78 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { FileText, Zap, Shield, Star } from "lucide-react";
 import { AlertCircle, Clock, ClipboardList } from "lucide-react";
 
 //componet
-import Header from "@/components/header";
 import Footer from "@/components/footer";
-import DescriptionCard from "@/components/discriptionCard";
 import AccordionComponent from "@/components/accordion";
 import PlanCard from "@/components/planCard";
 
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-blue-50 p-8">
-      {/* Header */}
-      <Header
-        links={[
-          { label: "製品特徴", href: "#features" },
-          { label: "料金・プラン", href: "#pricing" },
-          { label: "機能一覧", href: "#testimonials" },
-          { label: "チュートリアル", href: "#support" },
-          { label: "お問い合わせ", href: "#tutorial" },
-        ]}
-      />
       
+
       {/* Hero Section */}
       <section id="hero" className="relative h-200 overflow-hidden">
         <div className="absolute inset-0 z-0">
-        <div
-          className="w-[100%] h-full bg-cover bg-center translate-x-[-5%] brightness-90 mt-10"
-          style={{ backgroundImage: "url('/hero_section_1.png')" }}
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: `
+          <div
+            className="w-[100%] h-full bg-cover bg-center translate-x-[-5%] brightness-90 mt-10"
+            style={{ backgroundImage: "url('/hero_section_1.png')" }}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `
               radial-gradient(circle at center, transparent 80%, #EFF6FF 100%),
               linear-gradient(to top, #EFF6FF 0%, transparent 20%, transparent 70%, #EFF6FF 100%),
               linear-gradient(to bottom, #EFF6FF 0%, transparent 20%, transparent 70%, #EFF6FF 100%),
               linear-gradient(to left, #EFF6FF 0%, transparent 50%, transparent 80%, #EFF6FF 100%),
               linear-gradient(to right, #EFF6FF 0%, transparent 10%, transparent 50%, #EFF6FF 100%)
             `,
-          }}
-        ></div>
+            }}
+          />
         </div>
 
         <div className="relative z-10 h-full flex items-center justify-end pr-70 mt-10">
-        <div className="max-w-xl text-right">
-          <h1 className="flex text-5xl font-extrabold drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] leading-snug bg-gradient-to-r from-indigo-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
-            そのデータの手入力、<br />AIに任せてみませんか？
-          </h1>
-          <p className="text-2xl font-semibold text-gray-800 mt-6 mb-10 drop-shadow-md">
-          どんな紙の帳票でも丸ごと読み取り。<br />
-          欲しい情報だけを表形式で抜き出せる、<br />シンプルかつパワフルな次世代OCR。
-          </p>
-          <div className="flex gap-4 justify-end pr-24">
-            <Button size="lg" className="bg-black text-white hover:bg-gray-700">
-              無料で試す
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-gray-800 hover:bg-gray-200"
-            >
-              デモを見る
-            </Button>
+          <div className="max-w-xl text-right">
+            <h1 className="flex text-5xl font-extrabold drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] leading-snug bg-gradient-to-r from-indigo-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
+              そのデータの手入力、
+              <br />
+              AIに任せてみませんか？
+            </h1>
+            <p className="text-2xl font-semibold text-gray-800 mt-6 mb-10 drop-shadow-md">
+              どんな紙の帳票でも丸ごと読み取り。
+              <br />
+              欲しい情報だけを表形式で抜き出せる、
+              <br />
+              シンプルかつパワフルな次世代OCR。
+            </p>
+            <div className="flex gap-4 justify-end pr-24">
+              <Button
+                size="lg"
+                className="bg-black text-white hover:bg-gray-700"
+              >
+                無料で試す
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-gray-800 hover:bg-gray-200"
+              >
+                デモを見る
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-
       {/* Demo Section */}
       <section className="py-16 bg-blue-50">
         <div className="container mx-auto px-4 text-center items-center justify-center">
           <div className="bg-white h-120 mx-70 rounded-lg flex items-center justify-center">
-            <p className="text-xl text-gray-500">デモ画面がここに表示されます</p>
+            <p className="text-xl text-gray-500">
+              デモ画面がここに表示されます
+            </p>
           </div>
         </div>
       </section>
@@ -84,13 +80,13 @@ export default function LandingPage() {
       {/* Features Section */}
       <section className="py-16 bg-blue-50 " id="features">
         <div className="container px-4 max-w-6xl mx-auto">
-        <div className="flex items-center justify-center mb-12">
-          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
-          <h2 className="text-3xl font-bold font-semibold text-blue-800 text-center mx-4 whitespace-nowrap">
-            ScanMateの特徴
-          </h2>
-          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
-        </div>
+          <div className="flex items-center justify-center mb-12">
+            <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+            <h2 className="text-3xl font-bold font-semibold text-blue-800 text-center mx-4 whitespace-nowrap">
+              ScanMateの特徴
+            </h2>
+            <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+          </div>
           <div className="space-y-8">
             {/* Feature 1 */}
             <div className="bg-white rounded-lg overflow-hidden flex flex-col md:flex-row shadow-lg">
@@ -159,13 +155,13 @@ export default function LandingPage() {
       {/* Issue Section */}
       <section className="py-16 bg-blue-50">
         <div className="container mx-auto px-4 max-w-4xl mb-8">
-        <div className="flex items-center justify-center mb-12">
-          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
-          <h2 className="text-3xl font-bold font-semibold text-blue-800 text-center mx-4 whitespace-nowrap">
-            お困りではありませんか？
-          </h2>
-          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
-        </div>
+          <div className="flex items-center justify-center mb-12">
+            <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+            <h2 className="text-3xl font-bold font-semibold text-blue-800 text-center mx-4 whitespace-nowrap">
+              お困りではありませんか？
+            </h2>
+            <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+          </div>
           <ul className="space-y-8 max-w-3xl mx-auto">
             <li className="flex items-start">
               <div className="flex-shrink-0 mt-1">
@@ -176,7 +172,9 @@ export default function LandingPage() {
                   大量の請求書や領収書を効率よく処理したい
                 </h3>
                 <p className="text-lg font-semibold text-gray-800 mt-2">
-                  紙や画像で送られてくる帳票を手入力で処理していませんか？<br />ScanMateならPDFをアップロードするだけで必要な情報を自動的にCSV化します。
+                  紙や画像で送られてくる帳票を手入力で処理していませんか？
+                  <br />
+                  ScanMateならPDFをアップロードするだけで必要な情報を自動的にCSV化します。
                 </p>
               </div>
             </li>
@@ -189,7 +187,9 @@ export default function LandingPage() {
                   書類処理に追われて、本業に集中できない
                 </h3>
                 <p className="text-lg font-semibold text-gray-800 mt-2">
-                  少人数のバックオフィス業務では帳票処理が大きな負担。<br />ScanMateを導入すれば面倒な作業から解放され、本来の業務に専念できます。
+                  少人数のバックオフィス業務では帳票処理が大きな負担。
+                  <br />
+                  ScanMateを導入すれば面倒な作業から解放され、本来の業務に専念できます。
                 </p>
               </div>
             </li>
@@ -202,7 +202,9 @@ export default function LandingPage() {
                   商談メモや注文書の転記作業が面倒
                 </h3>
                 <p className="text-lg font-semibold text-gray-800 mt-2">
-                  手書き・PDF・FAXなど形式がバラバラな書類から必要項目を探すのは大変。<br />ScanMateは印字も手書きも正確に抽出し、転記作業を大幅に削減します。
+                  手書き・PDF・FAXなど形式がバラバラな書類から必要項目を探すのは大変。
+                  <br />
+                  ScanMateは印字も手書きも正確に抽出し、転記作業を大幅に削減します。
                 </p>
               </div>
             </li>
@@ -225,9 +227,15 @@ export default function LandingPage() {
               <div className="flex flex-col items-center mb-4">
                 <span className="text-2xl font-bold text-blue-800 mb-2">1</span>
                 {/* クラウドアップロードPNGアイコン */}
-                <img src="/1_upload_icon.png" alt="クラウドアップロードアイコン" className="h-20 w-20 ml-4" />
+                <img
+                  src="/1_upload_icon.png"
+                  alt="クラウドアップロードアイコン"
+                  className="h-20 w-20 ml-4"
+                />
               </div>
-              <h3 className="text-xl text-center font-semibold text-gray-800">PDFをアップロード</h3>
+              <h3 className="text-xl text-center font-semibold text-gray-800">
+                PDFをアップロード
+              </h3>
               <p className="text-lg font-semibold text-gray-600 text-center mt-2">
                 帳票のアップロードを行います。一枚ずつも、複数枚も可能です。
               </p>
@@ -243,9 +251,15 @@ export default function LandingPage() {
               <div className="flex flex-col items-center mb-4">
                 <span className="text-2xl font-bold text-blue-800 mb-2">2</span>
                 {/* タグPNGアイコン */}
-                <img src="/2_column_icon.png" alt="タグアイコン" className="h-20 w-20 ml-4" />
+                <img
+                  src="/2_column_icon.png"
+                  alt="タグアイコン"
+                  className="h-20 w-20 ml-4"
+                />
               </div>
-              <h3 className="text-xl text-center font-semibold text-gray-800">カラム名を指定</h3>
+              <h3 className="text-xl text-center font-semibold text-gray-800">
+                カラム名を指定
+              </h3>
               <p className="text-lg font-semibold text-gray-600 text-center mt-2">
                 帳票の項目名（例：氏名、合計金額）を入力します。
               </p>
@@ -261,9 +275,15 @@ export default function LandingPage() {
               <div className="flex flex-col items-center mb-4">
                 <span className="text-2xl font-bold text-blue-800 mb-2">3</span>
                 {/* 歯車PNGアイコン */}
-                <img src="/3_prompt_icon.png" alt="歯車アイコン" className="h-20 w-20" />
+                <img
+                  src="/3_prompt_icon.png"
+                  alt="歯車アイコン"
+                  className="h-20 w-20"
+                />
               </div>
-              <h3 className="text-xl text-center font-semibold text-gray-800">プロンプトを設定</h3>
+              <h3 className="text-xl text-center font-semibold text-gray-800">
+                プロンプトを設定
+              </h3>
               <p className="text-lg font-semibold text-gray-600 text-center mt-2">
                 必要に応じてAIへの追加の指示を入力します。
               </p>
@@ -279,59 +299,88 @@ export default function LandingPage() {
               <div className="flex flex-col items-center mb-4">
                 <span className="text-2xl font-bold text-blue-800 mb-2">4</span>
                 {/* チェックPNGアイコン */}
-                <img src="/4_check_icon.png" alt="チェックアイコン" className="h-20 w-20" />
+                <img
+                  src="/4_check_icon.png"
+                  alt="チェックアイコン"
+                  className="h-20 w-20"
+                />
               </div>
-              <h3 className="text-xl text-center font-semibold text-gray-800">結果の確認・修正</h3>
+              <h3 className="text-xl text-center font-semibold text-gray-800">
+                結果の確認・修正
+              </h3>
               <p className="text-lg font-semibold text-gray-600 text-center mt-2">
                 実行後、出力された表を見ながら、確認と修正を行ってください。
               </p>
             </div>
-          </div>  
+          </div>
         </div>
       </section>
-
 
       {/* OCR Capabilities */}
       <section className="py-16 bg-blue-50">
         <div className="container mx-auto px-4">
-        <div className="flex items-center justify-center mb-12">
-          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
-          <h2 className="text-3xl font-bold font-semibold text-blue-800 text-center mx-4 whitespace-nowrap">
-            ScanMateの機能一覧
-          </h2>
-          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
-        </div>
+          <div className="flex items-center justify-center mb-12">
+            <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+            <h2 className="text-3xl font-bold font-semibold text-blue-800 text-center mx-4 whitespace-nowrap">
+              ScanMateの機能一覧
+            </h2>
+            <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+          </div>
           <div className="text-center mb-8">
-            <p className="text-2xl mx-6 font-semibold text-gray-800">読み取りが可能な文字</p>
+            <p className="text-2xl mx-6 font-semibold text-gray-800">
+              読み取りが可能な文字
+            </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card>
               <CardContent className="p-6 flex flex-col items-center justify-center text-center">
-                <img src="/印字.png" alt="印字アイコン" className="h-40 w-auto"></img>
+                <img
+                  src="/印字.png"
+                  alt="印字アイコン"
+                  className="h-40 w-auto"
+                ></img>
                 <h3 className="text-lg font-semibold">印字されたテキスト</h3>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-6 text-center items-center justify-center text-center">
-                <img src="/手書き文字.png" alt="手書き文字" className="h-40 w-auto"></img>
-                <h3 className="text-lg font-semibold">手書き文字 <br /> (鉛筆・カラーペンにも対応)</h3>
+                <img
+                  src="/手書き文字.png"
+                  alt="手書き文字"
+                  className="h-40 w-auto"
+                ></img>
+                <h3 className="text-lg font-semibold">
+                  手書き文字 <br /> (鉛筆・カラーペンにも対応)
+                </h3>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-6 flex flex-col items-center justify-center text-center">
-                <img src="/スタンプ.png" alt="スタンプ" className="h-40 w-50 mb-4"></img>
+                <img
+                  src="/スタンプ.png"
+                  alt="スタンプ"
+                  className="h-40 w-50 mb-4"
+                ></img>
                 <h3 className="text-lg font-semibold">会社印・スタンプ</h3>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-6 flex flex-col items-center justify-center text-center">
-                <img src="/二重線.png" alt="二重線" className="h-40 w-50 mb-4" />
-                <h3 className="text-lg font-semibold">二重線での訂正・枠線からのはみ出し</h3>
-               </CardContent>
+                <img
+                  src="/二重線.png"
+                  alt="二重線"
+                  className="h-40 w-50 mb-4"
+                />
+                <h3 className="text-lg font-semibold">
+                  二重線での訂正・枠線からのはみ出し
+                </h3>
+              </CardContent>
             </Card>
           </div>
           <div className="text-center mt-12 mb-8">
-            <p className="text-2xl mb-6 font-semibold text-gray-800">その他の機能</p>
+            <p className="text-2xl mb-6 font-semibold text-gray-800">
+              その他の機能
+            </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card>
@@ -365,13 +414,13 @@ export default function LandingPage() {
       {/* Usage Methods */}
       <section className="py-16 bg-blue-50" id="support">
         <div className="container mx-auto px-4">
-        <div className="flex items-center justify-center mb-12">
-          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
-          <h2 className="text-3xl font-bold font-semibold text-blue-800 text-center mx-4 whitespace-nowrap">
-            使用方法・チュートリアル
-          </h2>
-          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
-        </div>
+          <div className="flex items-center justify-center mb-12">
+            <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+            <h2 className="text-3xl font-bold font-semibold text-blue-800 text-center mx-4 whitespace-nowrap">
+              使用方法・チュートリアル
+            </h2>
+            <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+          </div>
           <p className="text-center text-lg font-semibold text-gray-800 mb-8">
             誰でも簡単に使える、シンプルな設計。詳しい使用方法は以下のチュートリアルをご覧ください。
           </p>
@@ -389,27 +438,41 @@ export default function LandingPage() {
       {/* Pricing */}
       <section className="py-16 bg-blue-50" id="pricing">
         <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold font-semibold text-blue-800 text-center mb-12">料金・プラン</h2>
+          <h2 className="text-4xl font-bold font-semibold text-blue-800 text-center mb-12">
+            料金・プラン
+          </h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <PlanCard
               title="Light Plan"
               description="個人・小規模利用向け"
               price="30,000"
-              features={["月間1,800ページまで", "1枚あたり16円", "1,801枚目以降は15円/枚"]}
+              features={[
+                "月間1,800ページまで",
+                "1枚あたり16円",
+                "1,801枚目以降は15円/枚",
+              ]}
               selected={false}
             />
             <PlanCard
               title="Standard Plan"
               description="中小企業向け"
               price="100,000"
-              features={["月間10,000ページまで", "1枚あたり10円", "10,001枚目以降は15円/枚"]}
+              features={[
+                "月間10,000ページまで",
+                "1枚あたり10円",
+                "10,001枚目以降は15円/枚",
+              ]}
               selected={true}
             />
             <PlanCard
               title="Premium Plan"
               description="大企業向け"
               price="200,000"
-              features={["月間30,000ページまで", "1枚あたり6円", "30,001枚目以降は5円/枚"]}
+              features={[
+                "月間30,000ページまで",
+                "1枚あたり6円",
+                "30,001枚目以降は5円/枚",
+              ]}
               selected={false}
             />
           </div>
@@ -419,13 +482,13 @@ export default function LandingPage() {
       {/* FAQ */}
       <section className="py-16 bg-blue-50" id="faq">
         <div className="container mx-auto px-4">
-        <div className="flex items-center justify-center mb-12">
-          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
-          <h2 className="text-3xl font-bold font-semibold text-blue-800 text-center mx-4 whitespace-nowrap">
-            よくあるご質問
-          </h2>
-          <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
-        </div>
+          <div className="flex items-center justify-center mb-12">
+            <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+            <h2 className="text-3xl font-bold font-semibold text-blue-800 text-center mx-4 whitespace-nowrap">
+              よくあるご質問
+            </h2>
+            <div className="flex-grow h-px bg-[#006F95] max-w-[120px] mx-2"></div>
+          </div>
           <div className="text-6xl font-semibold max-w-3xl mx-auto">
             <AccordionComponent
               className="text-2xl font-semibold bg-white p-8 rounded-lg"
@@ -485,24 +548,40 @@ export default function LandingPage() {
               </thead>
               <tbody>
                 <tr>
-                  <td className="px-6 py-4 border-b font-semibold">入力画像仕様</td>
-                  <td className="px-6 py-4 border-b">PDF（1ファイル最大○MB、推奨○dpi）</td>
+                  <td className="px-6 py-4 border-b font-semibold">
+                    入力画像仕様
+                  </td>
+                  <td className="px-6 py-4 border-b">
+                    PDF,JPEG,PNG（1ファイル最大6MB、推奨600dpi）
+                  </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 border-b font-semibold">出力ファイル形式</td>
-                  <td className="px-6 py-4 border-b">CSV（UTF-8形式）、JSON（オプション）</td>
+                  <td className="px-6 py-4 border-b font-semibold">
+                    出力ファイル形式
+                  </td>
+                  <td className="px-6 py-4 border-b">
+                    CSV（UTF-8形式）
+                  </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 border-b font-semibold">推奨ブラウザ</td>
-                  <td className="px-6 py-4 border-b">Google Chrome、Microsoft Edge</td>
+                  <td className="px-6 py-4 border-b font-semibold">
+                    推奨ブラウザ
+                  </td>
+                  <td className="px-6 py-4 border-b">
+                    Google Chrome、Microsoft Edge
+                  </td>
                 </tr>
                 <tr>
                   <td className="px-6 py-4 border-b font-semibold">対応OS</td>
-                  <td className="px-6 py-4 border-b">Windows ○ 以降、macOS ○ 以降</td>
+                  <td className="px-6 py-4 border-b">
+                    Windows 10 以降、macOS  Sequoia (バージョン15) 以降
+                  </td>
                 </tr>
                 <tr>
                   <td className="px-6 py-4 border-b font-semibold">動作環境</td>
-                  <td className="px-6 py-4 border-b">インターネット接続、JavaScript有効化</td>
+                  <td className="px-6 py-4 border-b">
+                    インターネット接続、JavaScript有効化
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -513,10 +592,15 @@ export default function LandingPage() {
       {/* Free Trial CTA */}
       <section className="py-16 bg-blue-800 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold font-semibold mb-4">まずは無料トライアルから</h2>
+          <h2 className="text-4xl font-bold font-semibold mb-4">
+            まずは無料トライアルから
+          </h2>
           <p className="text-2xl font-semibold mb-8">お気軽にお試しください</p>
           <div className="flex gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-800 hover:bg-blue-50">
+            <Button
+              size="lg"
+              className="bg-white text-blue-800 hover:bg-blue-50"
+            >
               無料トライアル
             </Button>
             <Button
